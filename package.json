@@ -1,0 +1,22 @@
+{
+  "name": "test_redis",
+  "version": "1.0.0",
+  "description": "test redis",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com:yaredybk/test_redis"
+  },
+  "keywords": [
+    "redis"
+  ],
+  "author": "yared b.",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "redis": "^4.7.0"
+  }
+}
