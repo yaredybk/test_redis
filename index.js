@@ -11,9 +11,8 @@ class RedisClient {
   constructor() {
     this.isAlive = false;
     this.cl = createClient({
-      host: process.env.REDIS_SERVICE_NAME, // Render Redis service name, red-xxxxxxxxxxxxxxxxxxxx
-      port: process.env.REDIS_PORT || 6379, // Redis port
-    });
+      url: process.env.REDIS_URL
+  });
     this.cl.connect().catch((error) => {
       console.log("connect error");
       console.log(`Redis client not connected to server: ${error}`);
