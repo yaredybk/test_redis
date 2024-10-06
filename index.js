@@ -1,4 +1,4 @@
-// require('dotenv').config();
+require('dotenv').config();
 const { createClient } = require('redis');
 
 console.log("REDIS_URL");
