@@ -6,7 +6,7 @@ console.log(process.env.REDIS_URL);
 console.log(process.env.REDIS_SERVICE_NAME);
 console.log(process.env.REDIS_PORT);
 
-class for redis commands
+
 class RedisClient {
   constructor() {
     this.isAlive = false;
