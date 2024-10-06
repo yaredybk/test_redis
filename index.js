@@ -5,44 +5,44 @@ console.log("REDIS_URL");
 console.log(process.env.REDIS_URL);
 
 // class for redis commands
-class RedisClient {
-  constructor() {
-    this.isAlive = false;
-    this.cl = createClient(process.env.REDIS_URL);
-    this.cl.connect().catch((error) => {
-      console.log("connect error");
-      console.log(`Redis client not connected to server: ${error}`);
-    });
-    this.cl.on('connect', (err) => {
-      this.isAlive = true;
-    });
-    this.cl.on('error', (err) => {
-      this.isAlive = false;
-      console.log("on error");
-      console.warn('Redis Client Error', err);
-    });
-  }
+// class RedisClient {
+//   constructor() {
+//     this.isAlive = false;
+//     this.cl = createClient(process.env.REDIS_URL);
+//     this.cl.connect().catch((error) => {
+//       console.log("connect error");
+//       console.log(`Redis client not connected to server: ${error}`);
+//     });
+//     this.cl.on('connect', (err) => {
+//       this.isAlive = true;
+//     });
+//     this.cl.on('error', (err) => {
+//       this.isAlive = false;
+//       console.log("on error");
+//       console.warn('Redis Client Error', err);
+//     });
+//   }
 
-  // get value for given key
-  async get(key) {
-    const value = await this.cl.get(key);
-    return value;
-  }
+//   // get value for given key
+//   async get(key) {
+//     const value = await this.cl.get(key);
+//     return value;
+//   }
 
-  // set key value pair
-  async set(key, value, time) {
-    await this.cl.set(key, value, { EX: time });
-  }
+//   // set key value pair
+//   async set(key, value, time) {
+//     await this.cl.set(key, value, { EX: time });
+//   }
 
-  // del key vale pair
-  async del(key) {
-    await this.cl.del(key);
-  }
-}
+//   // del key vale pair
+//   async del(key) {
+//     await this.cl.del(key);
+//   }
+// }
 
-const cli = new RedisClient();
-(async ()=>{
-  await cli.set("test", "test passed");
-  const d = await cli.get("test");
-  console.log(d);
-})()
+// const cli = new RedisClient();
+// (async ()=>{
+//   await cli.set("test", "test passed");
+//   const d = await cli.get("test");
+//   console.log(d);
+// })()
